@@ -1,4 +1,4 @@
-package servlets.tests;
+package servlets.annotation.security;
 
 import java.io.IOException;
 
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns="/loginservlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet(urlPatterns="/annotation/loginsecurity")
+public class LoginServlet3 extends HttpServlet {
 	/**
 	 * 
 	 */
@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 		
 		req.authenticate(resp);//it is necessary to call authenticate to proceed with the login process.
 		
-		resp.sendRedirect("securitytestservlet");
+		resp.sendRedirect("security/servlet2");
 //		req.getRequestDispatcher("/securitytestservlet").forward(req, resp);
 	}
 }

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @ServletSecurity(
-//		httpMethodConstraints={@HttpMethodConstraint(value="GET")},
+//		httpMethodConstraints={@HttpMethodConstraint(value="GET", rolesAllowed="ADMIN")},
 		value=@HttpConstraint(rolesAllowed="ADMIN")
 )
 @WebServlet(urlPatterns="/securitytestservlet", name="SecurityTest")

@@ -1,6 +1,5 @@
 package servlets.tests;
 
-import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionBindingListener;
 

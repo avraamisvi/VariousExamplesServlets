@@ -7,11 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="loginservlet">
-		Login:<input type="text" name="l">
-		Pass:<input type="text" name="p">
-		
-		<input type="submit" value="submit">
+	<form method="POST" action="j_security_check">
+	<input type="text" name="j_username">
+	<input type="password" name="j_password">
 	</form>
 </body>
 </html>
