@@ -10,11 +10,15 @@
 </head>
 <body>
  
- <jsp:useBean class="jsp.tests.AudioBook" type="jsp.tests.Book" id="bookorcd" /> 
+ <jsp:useBean class="jsp.tests.Book" type="jsp.tests.Book" id="bookorcd"/> 
  <jsp:getProperty name="bookorcd" property="isbn" />
  
  <jsp:useBean class="jsp.tests.AudioBook" type="jsp.tests.Book" id="testbook2" /> 
  <jsp:getProperty name="testbook2" property="test" />
  
+ <br clear="all">
+ <jsp:setProperty property="test" name="testbook2" value="${bookorcd.isbn}"/>
+ <jsp:getProperty name="testbook2" property="test" />
+  
 </body>
 </html>

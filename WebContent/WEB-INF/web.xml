@@ -16,6 +16,7 @@ id="WebApp_ID" version="3.0">
   
   <security-constraint>
     <web-resource-collection>
+      <web-resource-name>besteira</web-resource-name>
       <url-pattern>/webdescriptor/security/*</url-pattern>
       <http-method>GET</http-method>
       <http-method>POST</http-method>
@@ -32,6 +33,7 @@ id="WebApp_ID" version="3.0">
   
   <security-constraint>
     <web-resource-collection>
+      <web-resource-name>besteira2</web-resource-name>
       <url-pattern>/webdescriptor/security/*</url-pattern>
       <http-method>GET</http-method>
       <http-method>POST</http-method>
@@ -68,5 +70,38 @@ id="WebApp_ID" version="3.0">
   	<listener-class>servlets.listerners.ServletContextAttibLis</listener-class>
   </listener>
 
+  <servlet>
+  	<servlet-name>ServletDuplicate2</servlet-name>
+  	<servlet-class>servlets.duplicated.ServletDuplicate</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ServletDuplicate2</servlet-name>
+  	<url-pattern>/wftestservlet2</url-pattern>
+  </servlet-mapping>
+  
+  <security-role>
+  	<role-name>ADMIN</role-name>
+  </security-role>
+  
+  <servlet>
+  	<servlet-name>simpledesc</servlet-name>
+  	<servlet-class>servlets.webdescriptorsimple.SimpleWebDescServ</servlet-class>
+  	
+  	<init-param>
+  		<param-name>initpar</param-name>
+  		<param-value>123</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>simpledesc</servlet-name>
+  	<url-pattern>/simpledesc</url-pattern>
+  </servlet-mapping>
+  
+  <error-page>
+  	<exception-type>servlets.tests.MyException</exception-type>
+  	<location>/errorpage.jsp</location>
+  </error-page>
   
 </web-app>

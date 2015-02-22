@@ -2,7 +2,8 @@ package jsp.tests;
 
 public class AudioBook extends Book {
 	private String isbn;
-
+	private String test = "testando";
+	
 	public AudioBook() {
 		isbn = "UNDEFINED_AUDIOBOOK";
 	}
@@ -16,6 +17,10 @@ public class AudioBook extends Book {
 	}
 	
 	public String getTest() {
-		return "testando";
+		return test;
+	}
+	
+	public void setTest(String test) {
+		this.test = test;
 	}
 }
