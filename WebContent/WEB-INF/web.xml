@@ -15,50 +15,58 @@ id="WebApp_ID" version="3.0">
   </welcome-file-list>
   
   <security-constraint>
-  	<web-resource-collection>
-  		<url-pattern>/webdescriptor/security/*</url-pattern>
-  		<http-method>GET</http-method>
-  		<http-method>POST</http-method>
-  	</web-resource-collection>
-  	
-  	<!-- If empty, no access will be alowed to this  web-resource-collection -->
-	<auth-constraint>
-		<role-name>ADMIN</role-name>
-	</auth-constraint>
-	
-	<user-data-constraint>
-		<transport-guarantee>NONE</transport-guarantee>
-	</user-data-constraint>
-	
+    <web-resource-collection>
+      <url-pattern>/webdescriptor/security/*</url-pattern>
+      <http-method>GET</http-method>
+      <http-method>POST</http-method>
+    </web-resource-collection>
+    
+    <auth-constraint>
+      <role-name>ADMIN</role-name>
+    </auth-constraint>
+    
+    <user-data-constraint>
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
   </security-constraint>
   
+  <security-constraint>
+    <web-resource-collection>
+      <url-pattern>/webdescriptor/security/*</url-pattern>
+      <http-method>GET</http-method>
+      <http-method>POST</http-method>
+    </web-resource-collection>
+    
+    <auth-constraint>
+      <role-name>*</role-name>
+    </auth-constraint>
+    
+  </security-constraint>  
+  
   <login-config>
-  	<auth-method>FORM</auth-method>
-  	<form-login-config>
-  		<form-login-page>/login.jsp</form-login-page>
-  		<form-error-page>/login.jsp</form-error-page>
-  	</form-login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/login.jsp</form-login-page>
+      <form-error-page>/login.jsp</form-error-page>
+    </form-login-config>
   </login-config>
-  
-<!--   <security-role> -->
-<!--   	<role-name>ADMIN</role-name> -->
-<!--   </security-role> -->
-  
   <servlet>
-  	<servlet-name>SecurityServlet1</servlet-name>
-  	<servlet-class>servlets.webdescriptor.security.Servlet1</servlet-class>
-  	<security-role-ref>
-		<role-name>ABACATE</role-name>
-		<role-link>ADMIN</role-link>
-  	</security-role-ref>
+    <servlet-name>SecurityServlet1</servlet-name>
+    <servlet-class>servlets.webdescriptor.security.Servlet1</servlet-class>
+    <security-role-ref>
+      <role-name>ABACATE</role-name>
+      <role-link>ADMIN</role-link>
+    </security-role-ref>
   </servlet>
-  
   <servlet-mapping>
-  	<servlet-name>SecurityServlet1</servlet-name>
-  	<url-pattern>/webdescriptor/security/servlet1</url-pattern>
-  </servlet-mapping>  
+    <servlet-name>SecurityServlet1</servlet-name>
+    <url-pattern>/webdescriptor/security/servlet1</url-pattern>
+  </servlet-mapping>
+
+  <listener>
+  	<display-name>ServletContextAttibLis</display-name>
+  	<listener-class>servlets.listerners.ServletContextAttibLis</listener-class>
+  </listener>
+
   
-<!--   <login-config> -->
-<!--   	<auth-method>BASIC</auth-method> -->
-<!--   </login-config>   -->
 </web-app>
