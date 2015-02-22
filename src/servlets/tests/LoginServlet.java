@@ -22,9 +22,11 @@ public class LoginServlet extends HttpServlet {
 		if(req.getUserPrincipal() != null ) {
 			req.logout();
 		}
-		req.login(req.getParameter("l"), req.getParameter("p"));
 		
-		req.authenticate(resp);//it is necessary to call authenticate to proceed with the login process.
+		req.login("abraao", "123");
+//		req.login(req.getParameter("l"), req.getParameter("p"));
+		
+//		req.authenticate(resp);
 		
 		resp.sendRedirect("securitytestservlet");
 //		req.getRequestDispatcher("/securitytestservlet").forward(req, resp);
