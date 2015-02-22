@@ -10,6 +10,7 @@
 	}
 	
 	request.setAttribute("htmltext", "<h1>This is heading</h1>");
+	pageContext.setAttribute("abacates", strs, PageContext.PAGE_SCOPE);
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -31,5 +32,10 @@ ${htmltext}
 
 with Core:
 <c:out value="${htmltext}" escapeXml="false"/>
+
+<c:forEach var="str1" items="${abacates}">
+	${str1}
+</c:forEach>
+
 </body>
 </html>
