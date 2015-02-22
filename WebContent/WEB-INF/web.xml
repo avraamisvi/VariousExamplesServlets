@@ -40,9 +40,23 @@ id="WebApp_ID" version="3.0">
   	</form-login-config>
   </login-config>
   
-  <security-role>
-  	<security-role-name>ADMIN</security-role-name>
-  </security-role>
+<!--   <security-role> -->
+<!--   	<role-name>ADMIN</role-name> -->
+<!--   </security-role> -->
+  
+  <servlet>
+  	<servlet-name>SecurityServlet1</servlet-name>
+  	<servlet-class>servlets.webdescriptor.security.Servlet1</servlet-class>
+  	<security-role-ref>
+		<role-name>ABACATE</role-name>
+		<role-link>ADMIN</role-link>
+  	</security-role-ref>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>SecurityServlet1</servlet-name>
+  	<url-pattern>/webdescriptor/security/servlet1</url-pattern>
+  </servlet-mapping>  
   
 <!--   <login-config> -->
 <!--   	<auth-method>BASIC</auth-method> -->

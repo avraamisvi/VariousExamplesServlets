@@ -23,12 +23,12 @@ public class LoginServlet extends HttpServlet {
 			req.logout();
 		}
 		
-		req.login("abraao", "123");
+//		req.login("abraao", "123");
 //		req.login(req.getParameter("l"), req.getParameter("p"));
 		
-//		req.authenticate(resp);
+		req.authenticate(resp);
 		
-		resp.sendRedirect("securitytestservlet");
+//		resp.sendRedirect("securitytestservlet");
 //		req.getRequestDispatcher("/securitytestservlet").forward(req, resp);
 	}
 }
