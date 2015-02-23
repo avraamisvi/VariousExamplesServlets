@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xmlns="http://java.sun.com/xml/ns/javaee" 
-xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
-id="WebApp_ID" version="3.0">
-
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>VariousExamplesServlets</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -13,7 +9,6 @@ id="WebApp_ID" version="3.0">
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>besteira</web-resource-name>
@@ -21,16 +16,13 @@ id="WebApp_ID" version="3.0">
       <http-method>GET</http-method>
       <http-method>POST</http-method>
     </web-resource-collection>
-    
     <auth-constraint>
       <role-name>ADMIN</role-name>
     </auth-constraint>
-    
     <user-data-constraint>
       <transport-guarantee>NONE</transport-guarantee>
     </user-data-constraint>
   </security-constraint>
-  
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>besteira2</web-resource-name>
@@ -38,13 +30,10 @@ id="WebApp_ID" version="3.0">
       <http-method>GET</http-method>
       <http-method>POST</http-method>
     </web-resource-collection>
-    
     <auth-constraint>
       <role-name>*</role-name>
     </auth-constraint>
-    
-  </security-constraint>  
-  
+  </security-constraint>
   <login-config>
     <auth-method>FORM</auth-method>
     <form-login-config>
@@ -64,44 +53,47 @@ id="WebApp_ID" version="3.0">
     <servlet-name>SecurityServlet1</servlet-name>
     <url-pattern>/webdescriptor/security/servlet1</url-pattern>
   </servlet-mapping>
-
   <listener>
-  	<display-name>ServletContextAttibLis</display-name>
-  	<listener-class>servlets.listerners.ServletContextAttibLis</listener-class>
+    <display-name>ServletContextAttibLis</display-name>
+    <listener-class>servlets.listerners.ServletContextAttibLis</listener-class>
   </listener>
-
   <servlet>
-  	<servlet-name>ServletDuplicate2</servlet-name>
-  	<servlet-class>servlets.duplicated.ServletDuplicate</servlet-class>
+    <servlet-name>ServletDuplicate2</servlet-name>
+    <servlet-class>servlets.duplicated.ServletDuplicate</servlet-class>
   </servlet>
-  
   <servlet-mapping>
-  	<servlet-name>ServletDuplicate2</servlet-name>
-  	<url-pattern>/wftestservlet2</url-pattern>
+    <servlet-name>ServletDuplicate2</servlet-name>
+    <url-pattern>/wftestservlet2</url-pattern>
   </servlet-mapping>
-  
   <security-role>
-  	<role-name>ADMIN</role-name>
+    <role-name>ADMIN</role-name>
   </security-role>
-  
   <servlet>
-  	<servlet-name>simpledesc</servlet-name>
-  	<servlet-class>servlets.webdescriptorsimple.SimpleWebDescServ</servlet-class>
-  	
-  	<init-param>
-  		<param-name>initpar</param-name>
-  		<param-value>123</param-value>
-  	</init-param>
+    <servlet-name>simpledesc</servlet-name>
+    <servlet-class>servlets.webdescriptorsimple.SimpleWebDescServ</servlet-class>
+    <init-param>
+      <param-name>initpar</param-name>
+      <param-value>123</param-value>
+    </init-param>
   </servlet>
-  
   <servlet-mapping>
-  	<servlet-name>simpledesc</servlet-name>
-  	<url-pattern>/simpledesc</url-pattern>
+    <servlet-name>simpledesc</servlet-name>
+    <url-pattern>/simpledesc</url-pattern>
   </servlet-mapping>
-  
   <error-page>
-  	<exception-type>servlets.tests.MyException</exception-type>
-  	<location>/errorpage.jsp</location>
+    <exception-type>servlets.tests.MyException</exception-type>
+    <location>/errorpage.jsp</location>
   </error-page>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>http://abraaotaglib</taglib-uri>
+      <taglib-location>WEB-INF/mytags/mytag.tld</taglib-location>
+    </taglib>
+  </jsp-config>
   
+  <env-entry>
+  	<env-entry-name>testRes</env-entry-name>
+  	<env-entry-type>java.lang.String</env-entry-type>
+  	<env-entry-value>TEST</env-entry-value>
+  </env-entry>
 </web-app>
