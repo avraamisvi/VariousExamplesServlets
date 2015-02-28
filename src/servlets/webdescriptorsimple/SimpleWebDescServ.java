@@ -13,6 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 @DeclareRoles({"TESTE1", "TESTE2"})
 public class SimpleWebDescServ extends HttpServlet {
 	
+	@Override
+	public void init() throws ServletException {
+		super.init();
+		System.out.println("SimpleWebDescServ");
+	}
+	
 	@PostConstruct
 	public void teste() {
 		System.out.println("OLA MUNDO");

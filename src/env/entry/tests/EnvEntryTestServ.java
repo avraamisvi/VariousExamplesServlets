@@ -19,6 +19,12 @@ public class EnvEntryTestServ extends HttpServlet{
 	String testRes;
 	
 	@Override
+	public void init() throws ServletException {
+		super.init();
+		System.out.println("EnvEntryTestServ");
+	}
+	
+	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		resp.getWriter().append(testRes);
