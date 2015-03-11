@@ -98,4 +98,9 @@
   	<env-entry-type>java.lang.String</env-entry-type>
   	<env-entry-value>TEST</env-entry-value>
   </env-entry>
+  
+  <context-param>
+  	<param-name>teste1</param-name>
+  	<param-value>teste2val</param-value>
+  </context-param>
 </web-app>

@@ -26,6 +26,7 @@ public class SecurityTest extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+		
 		resp.getWriter().write("VOCE ESTA LOGADO COMO:" + req.getUserPrincipal().getName());
 		resp.getWriter().write(" </br> REMOTE:" + req.getRemoteUser());
 		resp.getWriter().write(" ADMIN:" + req.isUserInRole("ADMIN"));
